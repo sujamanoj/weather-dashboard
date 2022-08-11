@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <header>
+        <h1>Weather Dashboard</h1>
+    </header>
+    <main>
+        <nav>
+            <form class="search-form">
+                <label for="search">
+                    <h2>Search for a City:</h2>
+                </label>
+                <input type="search" id="search" name="search" placeholder="San Diego" required>
+                <button id="submit-search" type="submit">Search</button>
+            </form>
+            <ul class="search-history" id="search-history"></ul>
+        </nav>
+        <section class="current-weather">
+            <div>
+                <h2 id="city-name"></h2>
+                <img id="weather-icon" src="">
+            </div>
+            <p id="city-temp"></p>
+            <p id="city-wind"></p>
+            <p id="city-humidity"></p>
+            <p id="city-uvi"></p>
+        </section>
+        <section class="forecast" id="forecast">
+            <h3>5-Day Forecast</h3>
+            <ul class="forecast-cards">
+            </ul>
+        </section>
+    </main>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

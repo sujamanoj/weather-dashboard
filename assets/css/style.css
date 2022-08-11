@@ -1,0 +1,242 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+:root {
+    --grey: #D3E0EA;
+    --blue: #226597;
+    --dark-blue: #33475a;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px 0;
+    background-color: var(--dark-blue);
+    color: #FFF;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(25, 1fr);
+    max-width: 1300px;
+    margin-right: 20px;
+}
+
+/* search input and history styles */
+nav {
+    grid-column: 1 / span 6;
+    grid-row: span 4;
+}
+
+.search-form {
+    width: 150px;
+    margin: 10px 20px 15px 10px;
+}
+
+input {
+    background-color: #FFF;
+}
+
+#search {
+    width: 100%;
+    font-size: 16px;
+    padding: 8px 5px;
+    margin: 10px 0 13px;
+    border-radius: 5px;
+    border-width: 1px;
+}
+
+#submit-search {
+    width: 100%;
+    padding: 10px 0;
+    background-color: var(--blue);
+    color: #FFF;
+    font-weight: 500;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#submit-search:hover {
+    background-color: var(--dark-blue);
+}
+
+.search-history {
+    width: 100px;
+    margin: 0 20px 10px 10px;
+    border-top: 1px solid var(--dark-blue);
+    overflow: scroll;
+    max-height: 460px;
+}
+
+.search-history li {
+    margin-top: 15px;
+}
+
+.city-button {
+    width: 100%;
+    padding: 10px 0;
+    background-color: var(--grey);
+    color: #000;
+    font-weight: 500;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.city-button:hover {
+    background-color: #bcc9d4;
+}
+/* search input and history styles end */
+#city-name {
+    display: flex;
+    padding: 20px;
+    width: 100px;
+}
+
+/* current weather styles */
+.current-weather {
+    position: relative;
+    left: 300px;
+      display: flex;
+      width: 350px;
+    background-color: DodgerBlue;
+}
+
+
+.current-weather > div {
+    background-color: #28c188;
+    width: 300px;
+    margin: 10px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 30px;
+}
+
+p {
+    padding: 5px 12px;
+    border-radius: 3px;
+    font-size: 20px;
+    color: #FFF;
+    text-align: center;
+    font-weight: 500;
+}
+
+.favorable {
+    background-color: #4fa20f;
+}
+
+.moderate {
+    background-color: #fdbc04;
+}
+
+.severe {
+    background-color: #f55024;
+}
+/* current weather styles end */
+
+
+/* 5-day forecast styles */
+.forecast {
+    position: relative;
+    top: 600px;
+    right: 200px;
+    width: 800px;
+   font-size: 60px;
+    display:flex;
+    background-color: #4fa20f;
+}
+
+
+.forecast-cards {
+    height: 400px;
+    display: flex;
+    
+    list-style-type: none;
+}
+
+h3 {
+    grid-column: 6 / span 4;
+    padding-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.forecast-cards li {
+    background-color: var(--dark-blue);
+    color: rgb(94, 202, 221);
+    margin: 10px 0 0 0;
+    padding: 8px;
+}
+
+li p:not(:first-of-type) {
+    padding-bottom: 20px;
+    font-size: 15px;
+}
+/* 5-day forecast styles end */
+
+/* horizontal tablet/lg screen styles */
+@media screen and (max-width: 1024px) {
+    nav {
+        grid-column: 1 / span 8;
+    }
+
+    .current-weather,
+    .forecast {
+        display: flex;
+    }
+    
+    .forecast-cards {
+        grid-template-columns: repeat(auto-fill, 190px);
+    }
+
+    
+}
+
+/* vertical tablet/med screen styles */
+@media screen and (max-width: 768px) {
+    nav {
+        grid-column: 1 / span 10;
+    }
+    
+    .current-weather, 
+    .forecast {
+        grid-column: 11 / span 15;
+    }
+} 
+
+/* small screen styles */
+@media screen and (max-width: 574px) {
+    main {
+        display: block;
+        width: 85%;
+        margin: 20px auto 40px;
+    }
+
+    .search-form, 
+    .search-history {
+        margin: 10px 0 10px 0;
+    }
+
+    .current-weather {
+        margin: 10px 0 0;
+    }
+
+    .forecast-cards {
+        grid-template-columns: repeat(auto-fill, 160px);
+    }
+}
+
+/* extra small screen styles */
+@media screen and (max-width: 365px) {
+    .forecast-cards {
+        grid-template-columns: repeat(auto-fill, 200px);
+    }
+}
